@@ -1,15 +1,23 @@
 import React from 'react';
-
+import events from './dbLibros.json'
 import './App.css';
-const people = ['Rowe', 'Prevost', 'Gare', 'hola', 'estoy', 'en', 'una', 'lista'];
-function App() {
-  return (
-    Object.keys(people).map((person, i )=> 
-    // expression goes here:
-  <li key={'person_'+i}>{person}</li>
+
+class App extends React.Component{
   
-  )
+
+render(){
+  return(
+      <div>
+        <h1> Soy el JSON</h1>
+        {events.map((detalle, id)=>{
+        return( <h1>{detalle.title}{detalle.date}</h1>)
+        
+          
+        })}
+      </div>
   )
 }
+}
+
 
 export default App;
